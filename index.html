@@ -4,427 +4,181 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Snaksy | Snacks & Breakfast</title>
-  <style>
-    :root {
-      --primary: #ff6f00;
-      --secondary: #fff3e6;
-      --dark: #2d2d2d;
-      --muted: #777;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background: #fafafa;
-      color: var(--dark);
-    }
-
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .header-inner {
-      max-width: 1200px;
-      margin: auto;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: 1px;
-    }
-
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
-    }
-
-    nav a:hover { color: var(--primary); }
-
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-                  url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe');
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      padding: 90px 20px;
-    }
-
-    .hero-content { max-width: 1200px; margin: auto; }
-
-    .hero h1 { font-size: 48px; margin-bottom: 12px; }
-
-    .hero p { font-size: 20px; max-width: 600px; }
-
-    .hero .badge {
-      display: inline-block;
-      margin-bottom: 16px;
-      padding: 6px 14px;
-      background: var(--primary);
-      border-radius: 20px;
-      font-size: 14px;
-    }
-
-    .section { max-width: 1200px; margin: auto; padding: 60px 20px; }
-
-    .section-header { margin-bottom: 40px; }
-
-    .section-header h2 { font-size: 34px; margin-bottom: 8px; }
-
-    .section-header p { color: var(--muted); font-size: 16px; }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .menu-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 24px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      text-align: center;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-    }
-
-    .menu-card h3 { margin: 12px 0 8px; font-size: 20px; }
-
-    .menu-card p { font-size: 14px; color: var(--muted); line-height: 1.5; }
-
-    .tag {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 4px 10px;
-      background: var(--secondary);
-      color: var(--primary);
-      border-radius: 12px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .delivery-logo {
-      height: 60px;
-      margin-bottom: 10px;
-      object-fit: contain;
-    }
-
-    /* GALLERY (AUTO SCROLL) */
-    .gallery-wrapper {
-      overflow: hidden;
-      position: relative;
-    }
-
-    .gallery-track {
-      display: flex;
-      gap: 20px;
-      animation: scrollGallery 35s linear infinite;
-    }
-
-    .gallery-item {
-      min-width: 260px;
-      height: 220px;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.08);
-      flex-shrink: 0;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    @keyframes scrollGallery {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .gallery-wrapper:hover .gallery-track {
-      animation-play-state: paused;
-    }
-
-    .about-box {
-      background: #fff;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      max-width: 900px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .contact-card {
-      background: #fff;
-      padding: 24px;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    }
-
-    footer {
-      background: #1f1f1f;
-      color: #bbb;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="header-inner">
-      <div class="logo">
-<img src="logo.png" alt="Snaksy Logo" style="height:48px;object-fit:contain" />
-</div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#delivery">Order Online</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <img src="logo.png" alt="Snaksy Logo" />
     </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <span class="badge">Available on Zomato & Swiggy</span>
-      <h1>Snacks & Breakfast
-        <br />That Sell Online</h1>
-      <p>Trusted cloud‑kitchen brand serving fresh, hygienic and high‑rating food on Zomato & Swiggy.</p>
-      <div style="margin-top:24px">
-        <a href="#delivery" style="background:#ff6f00;color:#fff;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:600;margin-right:12px">Order Online</a>
-        <a href="#menu" style="background:#fff;color:#ff6f00;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:600">View Menu</a>
-      </div>
+    <nav class="desktop-nav">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#delivery">Order Online</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </section>
+  </div>
 
-  <!-- MENU -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#menu" onclick="toggleMenu()">Menu</a>
+    <a href="#delivery" onclick="toggleMenu()">Order Online</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="badge">Available on Zomato & Swiggy</span>
+    <h1>Snacks & Breakfast<br/>That Sell Online</h1>
+    <p>Trusted cloud‑kitchen brand serving fresh, hygienic and high‑rating food on Zomato & Swiggy.</p>
+    <div style="margin-top:24px">
+      <a href="#delivery" class="btn-primary">Order Online</a>
+      <a href="#menu" class="btn-secondary">View Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
 <section class="section" id="menu">
   <div class="section-header">
     <h2>Best Sellers</h2>
     <p>High‑rating & fast‑moving items</p>
   </div>
+  <div class="menu-wrapper">
+    <div class="menu-card"><h3>Paratha</h3><p>Soft & delicious layered bread</p><span class="tag">Top Seller</span></div>
+    <div class="menu-card"><h3>Maggi</h3><p>Quick & tasty noodles</p><span class="tag">Customer Fav</span></div>
+    <div class="menu-card"><h3>Thekua</h3><p>Traditional sweet snack</p><span class="tag">Sweet Treat</span></div>
+    <div class="menu-card"><h3>Omelette</h3><p>Fluffy & protein rich breakfast</p><span class="tag">Healthy Choice</span></div>
+    <div class="menu-card"><h3>Macaroni</h3><p>Creamy pasta delight</p><span class="tag">Kids Favorite</span></div>
+    <div class="menu-card"><h3>Pyaaj Pakoda</h3><p>Crunchy onion fritters</p><span class="tag">Zomato Fav</span></div>
+    <div class="menu-card"><h3>Bread Pakoda</h3><p>Crispy & filling breakfast snack</p><span class="tag">Top Seller</span></div>
+    <div class="menu-card"><h3>Poha</h3><p>Light & healthy morning meal</p><span class="tag">4.5★</span></div>
+    <div class="menu-card"><h3>Upma</h3><p>Soft & homely south‑style</p><span class="tag">Swiggy Choice</span></div>
+    <div class="menu-card"><h3>Idli</h3><p>Steamed & fluffy south-indian snack</p><span class="tag">Healthy Choice</span></div>
+  </div>
+</section>
 
-  <div class="menu-wrapper" style="overflow-x:auto;">
-    <div class="menu-track" style="display:flex;gap:20px;">
-      <div class="menu-card" style="min-width:260px;"><h3>Paratha</h3><p>Soft & delicious layered bread</p><span class="tag">Top Seller</span></div>
-      <div class="menu-card" style="min-width:260px;"><h3>Maggi</h3><p>Quick & tasty noodles</p><span class="tag">Customer Fav</span></div>
-      <div class="menu-card" style="min-width:260px;"><h3>Thekua</h3><p>Traditional sweet snack</p><span class="tag">Sweet Treat</span></div>
-      <div class="menu-card" style="min-width:260px;"><h3>Omelette</h3><p>Fluffy & protein rich breakfast</p><span class="tag">Healthy Choice</span></div>
-      <div class="menu-card" style="min-width:260px;"><h3>Macaroni</h3><p>Creamy pasta delight</p><span class="tag">Kids Favorite</span></div>
-      <div class="menu-card" style="min-width:260px;"><h3>Pyaaj Pakoda</h3><p>Crunchy onion fritters</p><span class="tag">Zomato Fav</span></div>
-      <div class="menu-card" style="min-width:260px;"><h3>Bread Pakoda</h3><p>Crispy & filling breakfast snack</p><span class="tag">Top Seller</span></div>
-      <div class="menu-card" style="min-width:260px;"><h3>Poha</h3><p>Light & healthy morning meal</p><span class="tag">4.5★</span></div>
-      <div class="menu-card" style="min-width:260px;"><h3>Upma</h3><p>Soft & homely south‑style</p><span class="tag">Swiggy Choice</span></div>
-      <div class="menu-card" style="min-width:260px;"><h3>Idli</h3><p>Steamed & fluffy south-indian snack</p><span class="tag">Healthy Choice</span></div>
+<!-- DELIVERY -->
+<section class="section" id="delivery">
+  <div class="section-header">
+    <h2>Order Online</h2>
+    <p>Live & accepting orders</p>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img class="delivery-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/75/Zomato_logo.png" />
+      <p>⭐ 4.4 Rating • 1000+ Orders</p>
+      <a href="https://www.zomato.com/ncr/vinigini-cafe-sector-47-gurgaon/order?v=o2" class="btn-order">Order on Zomato</a>
+    </div>
+    <div class="menu-card">
+      <img class="delivery-logo" src="https://upload.wikimedia.org/wikipedia/commons/1/13/Swiggy_logo.png" />
+      <p>⭐ 4.3 Rating • Fast Delivery</p>
+      <a href="https://www.swiggy.com/city/gurgaon/vinigini-cafe-sohna-road-rest1207931" class="btn-order">Order on Swiggy</a>
     </div>
   </div>
 </section>
 
-<style>
-.menu-wrapper::-webkit-scrollbar { height: 8px; }
-.menu-wrapper::-webkit-scrollbar-thumb { background: #ff6f00; border-radius: 4px; }
-.menu-wrapper::-webkit-scrollbar-track { background: #f0f0f0; }
-</style>
-
-<style>
-.menu-wrapper::-webkit-scrollbar { height: 8px; }
-.menu-wrapper::-webkit-scrollbar-thumb { background: #ff6f00; border-radius: 4px; }
-.menu-wrapper::-webkit-scrollbar-track { background: #f0f0f0; }
-</style>
-
-  <!-- DELIVERY -->
-  <section class="section" id="delivery" style="background:#fff3e6">
-    <div class="section-header">
-      <h2>Order Online</h2>
-      <p>Live & accepting orders</p>
-    </div>
-
-    <div class="menu-grid">
-      <div class="menu-card">
-        <img class="delivery-logo" src="https://upload.wikimedia.org/wikipedia/commons/7/75/Zomato_logo.png" />
-        <p>⭐ 4.4 Rating • 1000+ Orders</p>
-        <a href="https://www.zomato.com/ncr/vinigini-cafe-sector-47-gurgaon/order?v=o2" style="display:inline-block;margin-top:12px;background:#e23744;color:#fff;padding:10px 18px;border-radius:6px;text-decoration:none">Order on Zomato</a>
-      </div>
-      <div class="menu-card">
-        <img class="delivery-logo" src="https://upload.wikimedia.org/wikipedia/commons/1/13/Swiggy_logo.png" />
-        <p>⭐ 4.3 Rating • Fast Delivery</p>
-        <a href="https://www.swiggy.com/city/gurgaon/vinigini-cafe-sohna-road-rest1207931" style="display:inline-block;margin-top:12px;background:#fc8019;color:#fff;padding:10px 18px;border-radius:6px;text-decoration:none">Order on Swiggy</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="section" id="gallery">
-    <div class="section-header">
-      <h2>Food Gallery</h2>
-      <p>Freshly prepared dishes loved by our online customers</p>
-    </div>
-
-    <div class="gallery-wrapper">
-      <div class="gallery-track">
-        <!-- 8 Images (duplicated for smooth scroll) -->
-        <div class="gallery-item"><img src="image_1.jpg" /></div>
-        <div class="gallery-item"><img src="image_3.jpg" /></div>
-        <div class="gallery-item"><img src="image_8.jpg" /></div>
-        <div class="gallery-item"><img src="image_2.png" /></div>
-        <div class="gallery-item"><img src="image_4.png" /></div>
-        <div class="gallery-item"><img src="image_5.png" /></div>
-        <div class="gallery-item"><img src="image_6.png" /></div>
-        <div class="gallery-item"><img src="image_7.png" /></div>
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="section-header">
+    <h2>Food Gallery</h2>
+    <p>Freshly prepared dishes loved by our online customers</p>
+  </div>
+  <div class="gallery-wrapper">
+    <div class="gallery-track">
+		<div class="gallery-item"><img src="image_1.jpg" /></div>
+		<div class="gallery-item"><img src="image_3.jpg" /></div>
+		<div class="gallery-item"><img src="image_8.jpg" /></div>
+		<div class="gallery-item"><img src="image_2.png" /></div>
+		<div class="gallery-item"><img src="image_4.png" /></div>
+		<div class="gallery-item"><img src="image_5.png" /></div>
+		<div class="gallery-item"><img src="image_6.png" /></div>
+		<div class="gallery-item"><img src="image_7.png" /></div>
 		<div class="gallery-item"><img src="image_8.png" /></div>
-      </div>
+		
+		<div class="gallery-item"><img src="image_1.jpg" /></div>
+		<div class="gallery-item"><img src="image_3.jpg" /></div>
+		<div class="gallery-item"><img src="image_8.jpg" /></div>
+		<div class="gallery-item"><img src="image_2.png" /></div>
+		<div class="gallery-item"><img src="image_4.png" /></div>
+		<div class="gallery-item"><img src="image_5.png" /></div>
+		<div class="gallery-item"><img src="image_6.png" /></div>
+		<div class="gallery-item"><img src="image_7.png" /></div>
+		<div class="gallery-item"><img src="image_8.png" /></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- REVIEWS -->
-    <!-- REVIEWS -->
-  <section class="section" id="reviews" style="background:#fff">
-    <div class="section-header">
-      <h2>What Customers Say</h2>
-      <p>Loved by customers ordering on Zomato & Swiggy</p>
-    </div>
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="section-header">
+    <h2>What Customers Say</h2>
+    <p>Loved by customers ordering on Zomato & Swiggy</p>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-card"><p>⭐⭐⭐⭐⭐</p><p>"Absolutely fresh and homely taste. One of the best breakfast options available on Zomato."</p><strong>— Rahul S.</strong></div>
+    <div class="menu-card"><p>⭐⭐⭐⭐⭐</p><p>"Packaging was neat and food arrived hot. Poha and pakodas were really good."</p><strong>— Neha K.</strong></div>
+    <div class="menu-card"><p>⭐⭐⭐⭐</p><p>"Consistent quality every time. Perfect for daily morning breakfast orders."</p><strong>— Amit V.</strong></div>
+    <div class="menu-card"><p>⭐⭐⭐⭐⭐</p><p>"Feels like home‑style food but with professional cloud‑kitchen quality."</p><strong>— Pooja M.</strong></div>
+  </div>
+</section>
 
-    <div class="menu-grid">
-      <div class="menu-card">
-        <p>⭐⭐⭐⭐⭐</p>
-        <p>"Absolutely fresh and homely taste. One of the best breakfast options available on Zomato."</p>
-        <strong>— Rahul S.</strong>
-      </div>
-      <div class="menu-card">
-        <p>⭐⭐⭐⭐⭐</p>
-        <p>"Packaging was neat and food arrived hot. Poha and pakodas were really good."</p>
-        <strong>— Neha K.</strong>
-      </div>
-      <div class="menu-card">
-        <p>⭐⭐⭐⭐</p>
-        <p>"Consistent quality every time. Perfect for daily morning breakfast orders."</p>
-        <strong>— Amit V.</strong>
-      </div>
-      <div class="menu-card">
-        <p>⭐⭐⭐⭐⭐</p>
-        <p>"Feels like home‑style food but with professional cloud‑kitchen quality."</p>
-        <strong>— Pooja M.</strong>
-      </div>
+<!-- FSSAI -->
+<section class="section" id="fssai">
+  <div class="section-header">
+    <h2>FSSAI Certified Kitchen</h2>
+    <p>Registered & compliant with food safety standards</p>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <img src="fssai-logo.png" alt="FSSAI Logo" />
+      <p>Our kitchen follows strict FSSAI food safety and hygiene guidelines to ensure safe, fresh and high-quality food for every order.</p>
+      <p>License No: <span>20825005007571</span></p>
+      <span class="tag">FSSAI Verified</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FSSAI -->
-    <!-- FSSAI -->
-  <section class="section" id="fssai" style="background:#fff3e6">
-    <div class="section-header">
-      <h2>FSSAI Certified Kitchen</h2>
-      <p>Registered & compliant with food safety standards</p>
-    </div>
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="section-header">
+    <h2>Contact</h2>
+    <p>Order or reach out to us</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card"><strong>Location</strong><p>1090, 1st Floor, Pragati Hills Society, Sector 47, Gurgaon</p></div>
+    <div class="contact-card"><strong>Phone</strong><p>+91 9973034343</p></div>
+    <div class="contact-card"><strong>Email</strong><p>snaksypca@email.com</p></div>
+  </div>
+</section>
 
-    <div class="menu-grid">
-      <div class="menu-card">
-        <img src="fssai-logo.png" alt="FSSAI Logo" style="height:80px;object-fit:contain;margin-bottom:16px" />
-        <p style="font-size:15px;line-height:1.6">
-          Our kitchen follows strict FSSAI food safety and hygiene guidelines to ensure safe,
-          fresh and high-quality food for every order.
-        </p>
-        <p style="margin-top:14px;font-weight:600">
-          License No: <span style="color:#ff6f00">20825005007571</span>
-        </p>
-        <span class="tag">FSSAI Verified</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST -->
-  <section class="section">
-    <div class="section-header">
-      <h2>Why Customers Trust Snaksy</h2>
-    </div>
-    <div class="menu-grid">
-      <div class="menu-card">Fresh Daily Preparation</div>
-      <div class="menu-card">High Hygiene Standards</div>
-      <div class="menu-card">Consistent Taste</div>
-      <div class="menu-card">Top Ratings Online</div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="section-header">
-      <h2>About Snaksy</h2>
-      <p>Homely taste, professional quality</p>
-    </div>
-
-    <div class="about-box">
-      <p>
-        Snaksy is built around one simple idea – serving fresh, mom‑made snacks and breakfast using quality ingredients.
-        Every dish is prepared with care, hygiene and consistency, so you get the same great taste every single time.
-      </p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="section-header">
-      <h2>Contact</h2>
-      <p>Order or reach out to us</p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-card">
-        <strong>Location</strong>
-        <p>1090, 1st Floor, Pragati Hills Society, Sector 47, Gurgaon</p>
-      </div>
-      <div class="contact-card">
-        <strong>Phone</strong>
-        <p>+91 9973034343</p>
-      </div>
-      <div class="contact-card">
-        <strong>Email</strong>
-        <p>snaksypca@email.com</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-    <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/919973034343" target="_blank" style="position:fixed;bottom:90px;right:20px;width:56px;height:56px;background:#25D366;border-radius:50%;box-shadow:0 8px 20px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;text-decoration:none;z-index:999">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:28px;height:28px;object-fit:contain" />
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919973034343" target="_blank" class="whatsapp-link">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
 </a>
 
-  <!-- STICKY MOBILE ORDER BAR -->
-  <div style="position:fixed;bottom:0;left:0;width:100%;display:flex;z-index:999">
-    <a href="https://www.zomato.com/ncr/vinigini-cafe-sector-47-gurgaon/order?v=o2" style="flex:1;background:#e23744;color:#fff;text-align:center;padding:14px;font-weight:600;text-decoration:none">Order on Zomato</a>
-    <a href="https://www.swiggy.com/city/gurgaon/vinigini-cafe-sohna-road-rest1207931" style="flex:1;background:#fc8019;color:#fff;text-align:center;padding:14px;font-weight:600;text-decoration:none">Order on Swiggy</a>
-  </div>
+<footer>
+  © 2025 Snaksy. Fresh Snacks & Breakfast.
+</footer>
 
-  <footer>
-    © 2025 Snaksy. Fresh Snacks & Breakfast.
-  </footer>
+<script>
+function toggleMenu() {
+  document.getElementById("mobileNav").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
